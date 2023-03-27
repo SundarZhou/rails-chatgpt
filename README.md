@@ -1,5 +1,7 @@
 # README
 
+## The original project road not up, hand copied a copy.copy from https://github.com/chloerei/rails-chatgpt-demo
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
