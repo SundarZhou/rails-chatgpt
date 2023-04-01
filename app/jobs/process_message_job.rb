@@ -3,7 +3,7 @@ class ProcessMessageJob < ApplicationJob
 
   def perform(message)
     response_message = message.conversation.messages.create role: "assistant"
-    p "================"
+
     client = OpenAI::Client.new
 
     response_message.response = client.chat(
@@ -14,9 +14,6 @@ class ProcessMessageJob < ApplicationJob
           }, # Required.
       }
     )
-
-    p response_message.response
-    p "----------------"
     if response_message.response["error"]
       response_message.failed!
     else
